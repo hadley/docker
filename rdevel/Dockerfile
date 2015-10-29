@@ -6,7 +6,7 @@ MAINTAINER "Hadley Wickham" hadley@rstudio.com
 RUN apt-get update -qq && apt-get install -t unstable -y --no-install-recommends \
     bash-completion \
     bison \
-    clang-3.5 \
+    clang-3.6 \
     debhelper \
     default-jdk \
     g++ \
@@ -80,9 +80,9 @@ RUN cd /tmp/R-devel \
 	   CXXFLAGS="-pipe -Wall -pedantic -g" \
 	   FFLAGS="-pipe -Wall -pedantic -g" \
 	   FCFLAGS="-pipe -Wall -pedantic -g" \
-	   CC="clang-3.5 -fsanitize=undefined -fno-sanitize=float-divide-by-zero,vptr,function -fno-sanitize-recover" \
-	   CXX="clang++-3.5 -fsanitize=undefined -fno-sanitize=float-divide-by-zero,vptr,function -fno-sanitize-recover" \
-	   CXX1X="clang++-3.5 -fsanitize=undefined -fno-sanitize=float-divide-by-zero,vptr,function -fno-sanitize-recover" \
+	   CC="clang-3.6 -fsanitize=undefined -fno-sanitize=float-divide-by-zero,vptr,function" \
+	   CXX="clang++-3.6 -fsanitize=undefined -fno-sanitize=float-divide-by-zero,vptr,function" \
+	   CXX1X="clang++-3.6 -fsanitize=undefined -fno-sanitize=float-divide-by-zero,vptr,function" \
 	   FC="gfortran" \
 	   F77="gfortran" \
 	   ./configure \
